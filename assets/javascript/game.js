@@ -1,3 +1,4 @@
+//declare variables
 let playerNum;
 let targetNum;
 let blackScore;
@@ -7,16 +8,41 @@ let whiteScore;
 let wins = 0;
 let losses = 0;
 
-$(document).ready(function() {
-  resetGame();
-  game();
+// declare event listeners
+$("#crystalBlack").on("click", event => {
+  console.log(event);
+  playerNum += blackScore;
+  $("#playerScore").text(playerNum);
+  checkWin();
+});
+$("#crystalRed").on("click", () => {
+  playerNum += redScore;
+  $("#playerScore").text(playerNum);
+  checkWin();
+});
+$("#crystalDiamond").on("click", () => {
+  playerNum += diamondScore;
+  $("#playerScore").text(playerNum);
+  checkWin();
+});
+$("#crystalWhite").on("click", () => {
+  playerNum += whiteScore;
+  $("#playerScore").text(playerNum);
+  checkWin();
 });
 
+// reset game on page load
+$(document).ready(function() {
+  resetGame();
+});
+
+// random number function
 function randomNum(max) {
   const random = Math.floor(Math.random() * max) + 1;
   return random;
 }
 
+// reset function
 function resetGame() {
   playerNum = 0;
   targetNum = randomNum(120);
@@ -30,33 +56,9 @@ function resetGame() {
   console.log(`red gem gives ${redScore}`);
   whiteScore = randomNum(12);
   console.log(`white gem gives ${whiteScore}`);
-  game();
 }
 
-function game() {
-  $("#crystalBlack").on("click", event => {
-    console.log(event);
-    playerNum += blackScore;
-    $("#playerScore").text(playerNum);
-    checkWin();
-  });
-  $("#crystalRed").on("click", () => {
-    playerNum += redScore;
-    $("#playerScore").text(playerNum);
-    checkWin();
-  });
-  $("#crystalDiamond").on("click", () => {
-    playerNum += diamondScore;
-    $("#playerScore").text(playerNum);
-    checkWin();
-  });
-  $("#crystalWhite").on("click", () => {
-    playerNum += whiteScore;
-    $("#playerScore").text(playerNum);
-    checkWin();
-  });
-}
-
+// check if win
 function checkWin() {
   if (playerNum === targetNum) {
     $("#playerScore").text(0);
