@@ -9,8 +9,7 @@ let wins = 0;
 let losses = 0;
 
 // declare event listeners
-$("#crystalBlack").on("click", event => {
-  console.log(event);
+$("#crystalBlack").on("click", () => {
   playerNum += blackScore;
   $("#playerScore").text(playerNum);
   checkWin();
