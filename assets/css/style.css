@@ -1,0 +1,73 @@
+h1.display-4 {
+  position: relative;
+}
+
+h1.display-4::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  background: red;
+  width: 100%;
+  bottom: -10px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform ease-in 200ms;
+}
+h1.display-4::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  background: red;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform ease-in 200ms;
+}
+
+h1.display-4:hover::after {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+h1.display-4:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+.jumbotron {
+  position: relative;
+}
+
+.jumbotron::before,
+.jumbotron::after {
+  content: "";
+  position: absolute;
+  top: 1.25em;
+  bottom: 1.25em;
+  left: 1.25em;
+  right: 1.25em;
+  opacity: 1;
+  transition: transform ease-out 300ms;
+}
+.jumbotron::before {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  transform: scale(0, 1);
+}
+.jumbotron::after {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  transform: scale(1, 0);
+}
+.jumbotron:hover::before {
+  transform: scale(1.02, 1);
+}
+.jumbotron:hover::after {
+  transform: scale(1, 1.1);
+}

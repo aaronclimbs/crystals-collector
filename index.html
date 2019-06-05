@@ -16,10 +16,13 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
     <div class="container">
-      <h1 class="display-4 text-center my-3">Crystal Collector</h1>
+      <div class="d-flex">
+        <h1 class="display-4 mx-auto my-3">Crystal Collector</h1>
+      </div>
       <p class="lead text-center">Collect the crystals!</p>
       <div class="jumbotron">
         <div class="row">
@@ -37,14 +40,14 @@
       </div>
       <div class="row mb-3">
         <div class="col-sm-6">
-          <h3>Wins: <span id="winText"></span></h3>
+          <h3>Wins: <span id="winText">0</span></h3>
         </div>
         <div class="col-sm-6">
-          <h3>Losses: <span id="lossText"></span></h3>
+          <h3>Losses: <span id="lossText">0</span></h3>
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-6 col-sm-3">
+        <div class="col-6 col-md-3">
           <img
             id="crystalDiamond"
             src="./assets/images/1354727531.svg"
@@ -52,7 +55,7 @@
             alt=""
           />
         </div>
-        <div class="col-xs-6 col-sm-3">
+        <div class="col-6 col-md-3">
           <img
             id="crystalBlack"
             src="./assets/images/mi-brami-Round-Black-Crystal-Button.svg"
@@ -60,7 +63,7 @@
             alt=""
           />
         </div>
-        <div class="col-xs-6 col-sm-3">
+        <div class="col-6 col-md-3">
           <img
             id="crystalRed"
             src="./assets/images/glassball.svg"
@@ -68,7 +71,7 @@
             alt=""
           />
         </div>
-        <div class="col-xs-6 col-sm-3">
+        <div class="col-6 col-md-3">
           <img
             id="crystalWhite"
             src="./assets/images/misc-beryl.svg"
@@ -81,8 +84,8 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
     <script
