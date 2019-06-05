@@ -36,6 +36,17 @@ h1.display-4:hover::before {
   transform-origin: left;
 }
 
+#targetScore,
+#playerScore {
+  font-size: 1.5em;
+}
+
+#add {
+  position: absolute;
+  right: 10vw;
+  font-size: 1.5em;
+}
+
 img:hover {
   cursor: pointer;
 }

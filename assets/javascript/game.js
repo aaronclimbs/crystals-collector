@@ -9,7 +9,18 @@ $("#crystalBlack").on("click", () => {
     $(this).animate({ opacity: 1 }, "fast");
   });
   playerNum += blackScore;
-  $("#playerScore").text(playerNum);
+  $("#playerScore")
+    .fadeOut()
+    .delay(100);
+  $("#add")
+    .text(`+${blackScore}`)
+    .slideDown()
+    .slideUp();
+  setTimeout(function() {
+    $("#playerScore")
+      .text(playerNum)
+      .fadeIn();
+  }, 500);
   checkWin();
 });
 $("#crystalRed").on("click", () => {
@@ -17,7 +28,18 @@ $("#crystalRed").on("click", () => {
     $(this).animate({ opacity: 1 }, "fast");
   });
   playerNum += redScore;
-  $("#playerScore").text(playerNum);
+  $("#playerScore")
+    .fadeOut()
+    .delay(100);
+  $("#add")
+    .text(`+${redScore}`)
+    .slideDown()
+    .slideUp();
+  setTimeout(function() {
+    $("#playerScore")
+      .text(playerNum)
+      .fadeIn();
+  }, 500);
   checkWin();
 });
 $("#crystalDiamond").on("click", () => {
@@ -25,16 +47,38 @@ $("#crystalDiamond").on("click", () => {
     $(this).animate({ opacity: 1 }, "fast");
   });
   playerNum += diamondScore;
-  $("#playerScore").text(playerNum);
+  $("#playerScore")
+    .fadeOut()
+    .delay(100);
+  $("#add")
+    .text(`+${diamondScore}`)
+    .slideDown()
+    .slideUp();
+  setTimeout(function() {
+    $("#playerScore")
+      .text(playerNum)
+      .fadeIn();
+  }, 500);
   checkWin();
 });
 $("#crystalWhite").on("click", () => {
   $("#crystalWhite").animate({ opacity: 0.55 }, "fast", function() {
     $(this).animate({ opacity: 1 }, "fast");
   });
-  // $("#crystalWhite").animate({ opacity: 1 }, "slow");
   playerNum += whiteScore;
-  $("#playerScore").text(playerNum);
+  $("#playerScore")
+    .fadeOut()
+    .delay(100);
+  $("#add")
+    .text(`+${whiteScore}`)
+    .slideDown()
+    .slideUp();
+  setTimeout(function() {
+    $("#playerScore")
+      .text(playerNum)
+      .fadeIn();
+  }, 500);
+  // $("#playerScore").fadeIn();
   checkWin();
 });
 
@@ -65,14 +109,27 @@ function checkWin() {
   if (playerNum === targetNum) {
     $("#playerScore").text(0);
     wins++;
-    $("#winText").text(wins);
+    $("#winText")
+      .text(wins)
+      .animate({ fontSize: "5em" })
+      .delay(50)
+      .animate({ fontSize: "1em" });
     resetGame();
   } else if (playerNum > targetNum) {
     $("#playerScore").text(0);
     losses++;
-    $("#lossText").text(losses);
+    $("#lossText")
+      .text(losses)
+      .animate({ fontSize: "5em" })
+      .delay(50)
+      .animate({ fontSize: "1em" });
     resetGame();
   }
+}
+
+function slideUpFadeIn(element) {
+  var fade = { opacity: 0, transition: "opacity 0.5s" };
+  element.css(fade).slideUp();
 }
 
 // reset game on page load
